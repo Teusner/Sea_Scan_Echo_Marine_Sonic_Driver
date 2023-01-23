@@ -4,10 +4,10 @@
 #include <string_view>
 #include <vector>
 
-class NMEAParser {
+class Reply {
    public:
       // Constructor
-      NMEAParser(std::string_view sentence);
+      Reply(std::string_view sentence);
 
       // Check if the message is valid
       bool Valid() const;

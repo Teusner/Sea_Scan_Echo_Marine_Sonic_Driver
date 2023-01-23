@@ -1,4 +1,4 @@
-#include "NMEAParser.hpp"
+#include "Reply.hpp"
 
 #include <algorithm>
 #include <bitset>
@@ -9,7 +9,7 @@
 #include <string_view>
 #include <vector>
 
-NMEAParser::NMEAParser(std::string_view sentence) {
+Reply::Reply(std::string_view sentence) {
     // Sentence storage
     s_ = sentence;
     
@@ -25,18 +25,18 @@ NMEAParser::NMEAParser(std::string_view sentence) {
     }
 }
 
-std::vector<std::string_view> NMEAParser::Fields() const {
+std::vector<std::string_view> Reply::Fields() const {
     return fields_;
 }
 
-bool NMEAParser::Valid() const {
+bool Reply::Valid() const {
     if (s_.front() != '$' or s_.at(s_.size()-2) != '\r' or s_.back() != '\n' or !_checksum()) {
         return false;
     }
     return true;
 }
 
-bool NMEAParser::_checksum() const {
+bool Reply::_checksum() const {
     // Reading checksum
     uint16_t c;
     std::size_t nc = s_.find("*")+1;
