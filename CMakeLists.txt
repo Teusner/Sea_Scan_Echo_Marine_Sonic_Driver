@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 
-add_library(nmea_parser src/Command.cpp src/Reply.cpp)
+add_library(sea_scan_echo_driver src/Command.cpp src/Reply.cpp)
 
 set(SEA_SCAN_ECHO_DRIVER_HEADERS include)
 
