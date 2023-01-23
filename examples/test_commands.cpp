@@ -1,25 +1,24 @@
-#include <Command.hpp>
-#include <Reply.hpp>
-#include <SeaScanEchoCommands.hpp>
+#include <SeaScanEcho/Command.hpp>
+#include <SeaScanEcho/SeaScanEchoCommands.hpp>
 
 #include <iostream>
 #include <memory>
 #include <vector>
 
 int main() {
-    std::vector<Command> command = {
-        Boot,
-        Com9600,
-        Filter,
-        Info,
-        Lockout,
-        Marco,
-        Range,
-        Reset,
-        Sos,
-        Trigger,
-        Threshold,
-        Tx
+    std::vector<SeaScanEcho::Command> command = {
+        SeaScanEcho::Commands::Boot,
+        SeaScanEcho::Commands::Com9600,
+        SeaScanEcho::Commands::Filter,
+        SeaScanEcho::Commands::Info,
+        SeaScanEcho::Commands::Lockout,
+        SeaScanEcho::Commands::Marco,
+        SeaScanEcho::Commands::Range,
+        SeaScanEcho::Commands::Reset,
+        SeaScanEcho::Commands::Sos,
+        SeaScanEcho::Commands::Trigger,
+        SeaScanEcho::Commands::Threshold,
+        SeaScanEcho::Commands::Tx
     };
 
     std::cout << "\033[32m";

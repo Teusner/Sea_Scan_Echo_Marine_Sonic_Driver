@@ -1,4 +1,4 @@
-#include <Reply.hpp>
+#include <SeaScanEcho/Reply.hpp>
 
 #include <iostream>
 #include <vector>
@@ -17,7 +17,7 @@ int main() {
     };
 
     for (const auto rep: replies) {
-        Reply s(rep);
+        SeaScanEcho::Reply s(rep);
 
         if (s.Valid()) {
             std::cout << "\033[32m";
