@@ -8,7 +8,6 @@ int main() {
     std::vector<std::string_view> replies = {
         "$MSALT,COM,9600*09\r\n",
         "$MSALT,BOOT*7D\r\n",
-        
         "$MSALT,ACK*22\r\n",
         "$MSALT,NACK*6C\r\n",
         "$MSALT,POLO*77\r\n",

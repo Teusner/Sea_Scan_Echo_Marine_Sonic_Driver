@@ -1,12 +1,5 @@
 #pragma once
 
-#include <algorithm>
-#include <bitset>
-#include <iterator>
-#include <iomanip>
-#include <iostream>
-#include <memory>
-#include <sstream>
 #include <string>
 #include <vector>
 
