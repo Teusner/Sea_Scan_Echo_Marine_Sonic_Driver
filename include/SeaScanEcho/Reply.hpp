@@ -8,20 +8,20 @@ namespace SeaScanEcho {
    class Reply {
       public:
          // Constructor
-         Reply(std::string_view sentence);
+         Reply(std::string sentence);
 
          // Check if the message is valid
          bool Valid() const;
 
          // Get fields from NMEA msg
-         std::vector<std::string_view> Fields() const;
+         std::vector<std::string> Fields() const;
 
       private:
          // Private sentence storage
-         std::string_view s_;
+         std::string s_;
 
          // Fields
-         std::vector<std::string_view> fields_;
+         std::vector<std::string> fields_;
 
          // Checksum verification
          bool _checksum() const;

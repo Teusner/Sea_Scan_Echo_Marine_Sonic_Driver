@@ -2,10 +2,10 @@
 
 #include <iostream>
 #include <vector>
-#include <string_view>
+#include <string>
 
 int main() {
-    std::vector<std::string_view> replies = {
+    std::vector<std::string> replies = {
         "$MSALT,COM,9600*09\r\n",
         "$MSALT,BOOT*7D\r\n",
         "$MSALT,ACK*22\r\n",
@@ -25,7 +25,7 @@ int main() {
         }
 
         // Showing fields
-        std::vector<std::string_view> fields = s.Fields();
+        std::vector<std::string> fields = s.Fields();
         std::size_t i=0;
         for (const auto &f: fields) {
             std::cout << f;

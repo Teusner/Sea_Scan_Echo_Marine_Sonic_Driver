@@ -6,17 +6,16 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <string_view>
 #include <vector>
 
 namespace SeaScanEcho {
-    Reply::Reply(std::string_view sentence) {
+    Reply::Reply(std::string sentence) {
         // Sentence storage
         s_ = sentence;
         
         // Splitting fields
         std::size_t last_pos = 1;
-        std::string_view delimiters(",*");
+        std::string delimiters(",*");
         for (std::size_t i=last_pos; i<s_.size(); ++i) {
             if (delimiters.find(s_[i]) != delimiters.npos) {
                 fields_.push_back(s_.substr(last_pos,i-last_pos));
@@ -26,7 +25,7 @@ namespace SeaScanEcho {
         }
     }
 
-    std::vector<std::string_view> Reply::Fields() const {
+    std::vector<std::string> Reply::Fields() const {
         return fields_;
     }
 
@@ -48,7 +47,7 @@ namespace SeaScanEcho {
 
         // Computing checksum
         std::bitset<8> b;
-        std::string_view sv = s_.substr(1, s_.find("*")-1);
+        std::string sv = s_.substr(1, s_.find("*")-1);
         for (const auto &c : sv) {
             b ^= std::bitset<8>(c);
         }

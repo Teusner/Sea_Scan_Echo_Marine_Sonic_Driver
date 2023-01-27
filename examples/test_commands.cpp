@@ -24,5 +24,9 @@ int main() {
     std::cout << "\033[32m";
     for (const auto &c: command ){
         std::cout << c();
+        for (auto car: c()) {
+            std::cout << int(car) << " ";
+        }
+        std::cout << std::endl;
     }
 }
