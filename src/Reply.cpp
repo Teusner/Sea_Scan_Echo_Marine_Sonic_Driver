@@ -30,7 +30,7 @@ namespace SeaScanEcho {
     }
 
     bool Reply::Valid() const {
-        if (s_.front() != '$' or s_.at(s_.size()-2) != '\r' or s_.back() != '\n' or !_checksum()) {
+        if (s_.front() != '$' or s_.at(s_.size()-2) != '\n' or s_.back() != '\r' or !_checksum()) {
             return false;
         }
         return true;
